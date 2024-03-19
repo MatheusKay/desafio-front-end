@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Table = styled.table`
   width: 100%;
+  margin-bottom: 80px;
   border-collapse: collapse;
 
   tbody {
@@ -21,24 +22,24 @@ export const HeadTable = styled.thead`
 `
 
 export const HeadTableImg = styled.th`
-  width: 154px;
+  width: 111px;
   padding: 14px 0 14px 32px;
 `
 
 export const HeadTableName = styled.th`
-  width: 230px;
+  width: 200px;
 `
 
 export const HeadTableOff = styled.th`
-  width: 185px;
+  width: 158px;
 `
 
 export const HeadTableAddate = styled.th`
-  width: 215px;
+  width: 178px;
 `
 
 export const HeadTableImgPhone = styled.th`
-  width: 154px;
+  width: 142px;
   padding-right: 32px;
 `
 
@@ -53,5 +54,6 @@ export const BodyTableImg = styled.td`
 `
 
 export const BodyTablePhone = styled.td`
-  padding-right: 32px;
+  // padding-right: 32px;
+  width: 141px;
 `

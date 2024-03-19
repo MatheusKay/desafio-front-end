@@ -28,4 +28,5 @@ export const BtnSearch = styled.button`
   border-right: 1px solid #dfdfdf;
   border-radius: 0 8px 8px 0;
   background-color: #fff;
+  cursor: pointer;
 `

@@ -1,8 +1,12 @@
-import img from '../../assets/images/Photo - 12.png'
+import { Func, formataNumero } from '../../services/api'
 
 import * as S from './style'
 
-const StaffTable = () => (
+type Props = {
+  tableFunc?: Func[]
+}
+
+const StaffTable = ({ tableFunc }: Props) => (
   <S.Table className="container">
     <S.HeadTable>
       <S.HeadTableImg>
@@ -22,23 +26,17 @@ const StaffTable = () => (
       </S.HeadTableImgPhone>
     </S.HeadTable>
     <tbody>
-      <S.BodyTableImg>
-        <tr>
-          <img src={img} alt="" />
+      {tableFunc?.map((pessoa) => (
+        <tr key={pessoa.id}>
+          <S.BodyTableImg>
+            <img src={pessoa.image} alt={pessoa.name} />
+          </S.BodyTableImg>
+          <td>{pessoa.name}</td>
+          <td>{pessoa.job}</td>
+          <td>{pessoa.admission_date}</td>
+          <S.BodyTablePhone>{formataNumero(pessoa.phone)}</S.BodyTablePhone>
         </tr>
-      </S.BodyTableImg>
-      <td>
-        <tr>Nome do funcionario</tr>
-      </td>
-      <td>
-        <tr>Profissão</tr>
-      </td>
-      <td>
-        <tr>00/00/0000</tr>
-      </td>
-      <S.BodyTablePhone>
-        <tr>+55 (55) 55555-555</tr>
-      </S.BodyTablePhone>
+      ))}
     </tbody>
   </S.Table>
 )
