@@ -12,8 +12,6 @@ import { store } from './store'
 function App() {
   const [filtro, setFilto] = useState('')
 
-  console.log(filtro)
-
   return (
     <Provider store={store}>
       <EstiloGlobal />

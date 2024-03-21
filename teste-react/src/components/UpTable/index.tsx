@@ -1,6 +1,7 @@
 import StaffTable from '../Table'
 
 import { useGetFuncionariosQuery } from '../../services/api'
+import { filtroPesquisa } from '../../utils'
 
 type Props = {
   busca: string
@@ -9,11 +10,11 @@ type Props = {
 const UpTable = ({ busca }: Props) => {
   const { data: funcionarios } = useGetFuncionariosQuery()
 
-  const filtro = funcionarios?.filter((objeto) =>
-    objeto.name.match(new RegExp(busca, 'i'))
-  )
-
-  return <StaffTable tableFunc={filtro} />
+  if (funcionarios) {
+    return <StaffTable tableFunc={filtroPesquisa(funcionarios, busca)} />
+  } else {
+    return <div>Ops ocorreu um Erro na tabela</div>
+  }
 }
 
 export default UpTable

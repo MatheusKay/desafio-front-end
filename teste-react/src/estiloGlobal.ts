@@ -1,5 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const breakpoints = {
+  tablet: '767px',
+  descktop: '1024px'
+}
+
 export const EstiloGlobal = createGlobalStyle`
   * {
     margin: 0;
@@ -8,10 +13,18 @@ export const EstiloGlobal = createGlobalStyle`
     font-family: "Roboto", sans-serif;
   }
 
+  body {
+    margin-bottom: 80px;
+  }
+
   .container {
     max-width: 960px;
     width: 100%;
     margin: 0 auto;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      max-width: 335px;
+    }
   }
 
   .title {
@@ -25,5 +38,9 @@ export const EstiloGlobal = createGlobalStyle`
     margin: 32px auto;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      flex-direction: column;
+    }
   }
 `
