@@ -19,6 +19,25 @@ export const Table = styled.table`
         width: 32px;
         height: 32px;
         border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .margin_ajust_text {
+        margin-top: 16px;
+      }
+
+      .margin_top {
+        margin-top: 32px;
+      }
+
+      .margin_bottom {
+        margin-bottom: 32px;
+      }
+
+      .padding_ajust {
+        padding-left: 16px;
+        padding-right: 16px;
       }
     }
 
@@ -69,9 +88,14 @@ export const HeadTableImgPhone = styled.th`
   width: 142px;
   padding-right: 32px;
 
+  span {
+    display: flex;
+    justify-content: center;
+  }
+
   @media (max-width: ${breakpoints.tablet}) {
     width: auto;
-    padding-right: 16px;
+    padding: 0;
   }
 `
 
@@ -86,9 +110,21 @@ export const BodyTableImg = styled.td`
 
   @media (max-width: ${breakpoints.tablet}) {
     padding: 12px 16px;
+    margin-bottom: 32px;
   }
 `
 
 export const BodyTablePhone = styled.td`
   width: 141px;
+`
+
+export const InfosMobile = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted #dfdfdf;
+
+  h2 {
+    font-weight: 500;
+    font-size: 16px;
+  }
 `

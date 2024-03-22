@@ -32,6 +32,10 @@ export const EstiloGlobal = createGlobalStyle`
     font-weight: 500;
     line-height: 28.13px;
     color: #1c1c1c;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-bottom: 28px;
+    }
   }
 
   .searchField {
@@ -40,6 +44,7 @@ export const EstiloGlobal = createGlobalStyle`
     justify-content: space-between;
 
     @media (max-width: ${breakpoints.tablet}) {
+      margin-bottom: 20px;
       flex-direction: column;
     }
   }
